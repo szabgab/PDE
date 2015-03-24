@@ -73,6 +73,9 @@ Vagrant.configure(2) do |config|
 
   config.vm.define "dev" do |dev|
     config.vm.box = "hashicorp/precise32"
+    config.vm.provision "shell", inline: <<-SHELL
+       /usr/bin/perl /vagrant/install.pl
+    SHELL
   end
 
   config.vm.define "build" do |build|
