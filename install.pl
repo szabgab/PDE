@@ -5,6 +5,7 @@ use warnings;
 my $version = '5.20.2';
 
 my $path = "/home/vagrant/localperl";
+my $perl = "$path/bin/perl";
 
 if (not -e $path) {
 	system "wget http://www.cpan.org/src/5.0/perl-$version.tar.gz";
@@ -15,4 +16,11 @@ if (not -e $path) {
 	system "make test";
 	system "make install";
 }
+
+if (not -e "$path/bin/cpanm") {
+	system "curl -L https://cpanmin.us | $perl - App::cpanminus";
+}
+
+system "$path/bin/cpanm PAR::Packer";
+
 
