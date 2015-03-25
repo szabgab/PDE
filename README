@@ -1,0 +1,16 @@
+Perl Maven Development Environment
+
+An environment to develop Perl-based applications.
+
+
+
+======
+
+To release a new box run
+
+    vagrant package dev --output pmde.box
+
+Then upload to https://atlas.hashicorp.com/
+
+
+
