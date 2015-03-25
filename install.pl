@@ -15,12 +15,24 @@ if (not -e $path) {
 	system "make";
 	system "make test";
 	system "make install";
+	chdir '..';
+	system "rm -rf perl-$version";
+	unlink "perl-$version.tar.gz"; 
 }
 
 if (not -e "$path/bin/cpanm") {
 	system "curl -L https://cpanmin.us | $perl - App::cpanminus";
 }
 
-system "$path/bin/cpanm PAR::Packer";
+my @modules = qw(
+	PAR::Packer
+	Dancer2
+	Dancer2::Plugin::Passphrase
+	MongoDB
+);	
 
+foreach my $module (@modules) {
+	system "$path/bin/cpanm $module";
+}
 
+system "chown -R vagrant.vagrant $path";

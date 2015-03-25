@@ -65,22 +65,33 @@ Vagrant.configure(2) do |config|
   # Enable provisioning with a shell script. Additional provisioners such as
   # Puppet, Chef, Ansible, Salt, and Docker are also available. Please see the
   # documentation for more information about their specific syntax and use.
-  config.vm.provision "shell", inline: <<-SHELL
-    sudo apt-get update
-    sudo apt-get install -y htop
-    sudo apt-get install -y vim
-    sudo apt-get install -y curl
-  SHELL
+  config.vm.provision "shell", path: "bootstrap.sh"
+  #config.vm.provision "shell", inline: <<-SHELL
+  #  sudo apt-get update
+  #  sudo apt-get install -y htop
+  #  sudo apt-get install -y vim
+  #  sudo apt-get install -y curl
+  #  sudo apt-get clean
+  #  cp /vagrant/bash_profile ~/.bash_profile
+  #SHELL
 
   config.vm.define "dev" do |dev|
     config.vm.box = "hashicorp/precise32"
     config.vm.provision "shell", inline: <<-SHELL
        /usr/bin/perl /vagrant/install.pl
+
+       # "zero out" the drive (this is for Ubuntu)
+       # sudo dd if=/dev/zero of=/EMPTY bs=1M
+       # sudo rm -f /EMPTY
+
+       # clear the Bash History
+       cat /dev/null > ~/.bash_history && history -c
     SHELL
   end
 
   config.vm.define "build" do |build|
     config.vm.box = "hashicorp/precise32"
   end
+
 
 end
