@@ -26,6 +26,8 @@ if (not -e "$path/bin/cpanm") {
 
 my @modules = qw(
 	Acme::MetaSyntactic
+	App::Ack
+	App::cpanoutdated
 	Business::PayPal
 	Carp::Always
 	Crypt::URandom
@@ -33,7 +35,11 @@ my @modules = qw(
 	Dancer2
 	Dancer2::Plugin::Passphrase
 	Dancer2::Plugin::Auth::Extensible
+	Data::ICal
+	Data::Printer
 	DateTime
+	DateTime::Format::ICal
+	DateTime::Functions
 	DBD::SQLite
 	DBI
 	DBIx::RunSQL
@@ -42,25 +48,44 @@ my @modules = qw(
 	Email::Stuffer
 	Email::Valid
 	File::Find::Rule
+	Gravatar::URL
 	Hash::Merge::Simple
+	JSON::Path
+	JSON::XS
 	List::MoreUtils
+	List::Util
+	List::UtilsBy
 	Math::Random::ISAAC::XS
+	Module::Version
 	MongoDB
 	Moo
+	MIME::Lite
+	Net::Delicious
 	Path::Tiny
 	PAR::Packer
+	Perl::Tidy
+	PerlX::Maybe
 	Plack
+	Plack::Middleware::DirIndex
+	PPI
 	Scope::Upper
 	Starman
 	Storable
 	SVG
 	Template
+	Term::ReadPassword::Win32
+	Test::Code::TidyAll
 	Test::More
+	Test::Perl::Critic
 	Test::Script
 	Test::WWW::Mechanize
 	Test::WWW::Mechanize::PSGI
 	Time::HiRes
 	URL::Encode::XS
+	Web::Feed
+	WWW::Mailman
+	WWW::Shorten::Bitly
+	XML::Feed
 	YAML
 	JSON
 );
