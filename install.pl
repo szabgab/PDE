@@ -30,11 +30,13 @@ my @modules = qw(
 	App::cpanoutdated
 	Business::PayPal
 	Carp::Always
+	Code::Explain
 	Crypt::URandom
 	Daemon::Control
 	Dancer2
-	Dancer2::Plugin::Passphrase
 	Dancer2::Plugin::Auth::Extensible
+	Dancer2::Plugin::DBIC
+	Dancer2::Plugin::Passphrase
 	Data::ICal
 	Data::Printer
 	DateTime
@@ -43,6 +45,7 @@ my @modules = qw(
 	DBD::SQLite
 	DBI
 	DBIx::RunSQL
+	Digest::SHA
 	Email::MIME::Creator
 	Email::Sender::Simple
 	Email::Stuffer
@@ -52,10 +55,13 @@ my @modules = qw(
 	Hash::Merge::Simple
 	JSON::Path
 	JSON::XS
+	JSON::MaybeXS
 	List::MoreUtils
 	List::Util
 	List::UtilsBy
 	Math::Random::ISAAC::XS
+	MetaCPAN::API
+	MetaCPAN::Client
 	Module::Version
 	MongoDB
 	Moo

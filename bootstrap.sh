@@ -9,6 +9,7 @@ apt-get install -y mongodb
 #apt-get install -y libxml2
 apt-get install -y libxml2-dev
 apt-get install -y libexpat1-dev
+apt-get install -y libpam-dev
 
 sudo debconf-set-selections <<< 'mysql-server-5.5 mysql-server/root_password password secret'
 sudo debconf-set-selections <<< 'mysql-server-5.5 mysql-server/root_password_again password secret'
