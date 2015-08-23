@@ -24,19 +24,23 @@ if (not -e "$path/bin/cpanm") {
 	system "curl -L https://cpanmin.us | $perl - App::cpanminus";
 }
 
+
 my @modules = qw(
 	Acme::MetaSyntactic
 	App::Ack
 	App::cpanoutdated
 	Business::PayPal
+	Cache::File
 	Carp::Always
 	Code::Explain
+	Config::Tiny
 	Crypt::URandom
 	Daemon::Control
 	Dancer2
 	Dancer2::Plugin::Auth::Extensible
 	Dancer2::Plugin::DBIC
 	Dancer2::Plugin::Passphrase
+	Dancer2::Plugin::Redis
 	Data::ICal
 	Data::Printer
 	DateTime
@@ -63,6 +67,7 @@ my @modules = qw(
 	MetaCPAN::API
 	MetaCPAN::Client
 	Module::Version
+	Mojolicious
 	MongoDB
 	Moo
 	MIME::Lite
@@ -75,6 +80,8 @@ my @modules = qw(
 	Plack::Middleware::DirIndex
 	PPI
 	Scope::Upper
+	Sereal::Decoder
+	Sereal::Encoder
 	Starman
 	Storable
 	SVG
