@@ -76,23 +76,16 @@ Vagrant.configure(2) do |config|
   #  cp /vagrant/bash_profile ~/.bash_profile
   #SHELL
 
-  config.vm.define "dev" do |dev|
-    config.vm.box = "hashicorp/precise32"
-    config.vm.provision "shell", inline: <<-SHELL
-       /usr/bin/perl /vagrant/install.pl
+  config.vm.box = "hashicorp/precise32"
+  config.vm.provision "shell", inline: <<-SHELL
+     /usr/bin/perl /vagrant/install.pl
 
-       # "zero out" the drive (this is for Ubuntu)
-       # sudo dd if=/dev/zero of=/EMPTY bs=1M
-       # sudo rm -f /EMPTY
+     # "zero out" the drive (this is for Ubuntu)
+     # sudo dd if=/dev/zero of=/EMPTY bs=1M
+     # sudo rm -f /EMPTY
 
-       # clear the Bash History
-       cat /dev/null > ~/.bash_history && history -c
-    SHELL
-  end
-
-  config.vm.define "build" do |build|
-    config.vm.box = "hashicorp/precise32"
-  end
-
+     # clear the Bash History
+     cat /dev/null > ~/.bash_history && history -c
+  SHELL
 
 end
