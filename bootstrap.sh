@@ -17,7 +17,9 @@ sudo debconf-set-selections <<< 'mysql-server-5.5 mysql-server/root_password pas
 sudo debconf-set-selections <<< 'mysql-server-5.5 mysql-server/root_password_again password secret'
 sudo apt-get -y install mysql-server-5.5 
 
+echo "copying bash_profile"
 cp /vagrant/bash_profile ~/.bash_profile
+echo "Result: $?"
 echo 'perl-maven' > /etc/hostname
 
 # apt-get install -y apache2
