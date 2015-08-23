@@ -2,13 +2,13 @@
 use strict;
 use warnings;
 
-my $version = '5.20.2';
+my $version = '5.22.0';
 
 my $path = "/home/vagrant/localperl";
 my $perl = "$path/bin/perl";
 
 if (not -e $path) {
-	system "wget http://www.cpan.org/src/5.0/perl-$version.tar.gz";
+	system "wget -q http://www.cpan.org/src/5.0/perl-$version.tar.gz";
 	system "tar -xzf perl-$version.tar.gz";
 	chdir "perl-$version";
 	system "./Configure -des -Dprefix=$path";
@@ -21,7 +21,7 @@ if (not -e $path) {
 }
 
 if (not -e "$path/bin/cpanm") {
-	system "curl -L https://cpanmin.us | $perl - App::cpanminus";
+	system "curl -s -L https://cpanmin.us | $perl - App::cpanminus";
 }
 
 
