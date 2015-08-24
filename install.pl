@@ -1,11 +1,30 @@
 #!/usr/bin/perl
 use strict;
 use warnings;
+use Cwd qw(abs_path);
+use File::Basename qw(dirname);
+
+my ($test) = @ARGV;
 
 my $version = '5.22.0';
 
 my $path = "/home/vagrant/localperl";
 my $perl = "$path/bin/perl";
+
+my $file = dirname(abs_path($0)) . '/modules.txt';
+open my $fh, '<', $file or die "Could not open file '$file': $!\n";
+my @modules = <$fh>;
+chomp @modules;
+
+if ($test) {
+	foreach my $module (@modules) {
+		#system "$^X -M$module -e1";
+		eval "use $module";
+		print $@ if $@;
+	}
+	exit;
+}
+
 
 if (not -e $path) {
 	system "wget -q http://www.cpan.org/src/5.0/perl-$version.tar.gz";
@@ -23,85 +42,6 @@ if (not -e $path) {
 if (not -e "$path/bin/cpanm") {
 	system "curl -s -L https://cpanmin.us | $perl - App::cpanminus";
 }
-
-
-my @modules = qw(
-	Acme::MetaSyntactic
-	App::Ack
-	App::cpanoutdated
-	Business::PayPal
-	Cache::File
-	Carp::Always
-	Code::Explain
-	Config::Tiny
-	Crypt::URandom
-	Daemon::Control
-	Dancer2
-	Dancer2::Plugin::Auth::Extensible
-	Dancer2::Plugin::DBIC
-	Dancer2::Plugin::Passphrase
-	Dancer2::Plugin::Redis
-	Data::ICal
-	Data::Printer
-	DateTime
-	DateTime::Format::ICal
-	DateTime::Functions
-	DBD::SQLite
-	DBI
-	DBIx::RunSQL
-	Digest::SHA
-	Email::MIME::Creator
-	Email::Sender::Simple
-	Email::Stuffer
-	Email::Valid
-	File::Find::Rule
-	Gravatar::URL
-	Hash::Merge::Simple
-	JSON::Path
-	JSON::XS
-	JSON::MaybeXS
-	List::MoreUtils
-	List::Util
-	List::UtilsBy
-	Math::Random::ISAAC::XS
-	MetaCPAN::API
-	MetaCPAN::Client
-	Module::Version
-	Mojolicious
-	MongoDB
-	Moo
-	MIME::Lite
-	Net::Delicious
-	Path::Tiny
-	PAR::Packer
-	Perl::Tidy
-	PerlX::Maybe
-	Plack
-	Plack::Middleware::DirIndex
-	PPI
-	Scope::Upper
-	Sereal::Decoder
-	Sereal::Encoder
-	Starman
-	Storable
-	SVG
-	Template
-	Term::ReadPassword::Win32
-	Test::Code::TidyAll
-	Test::More
-	Test::Perl::Critic
-	Test::Script
-	Test::WWW::Mechanize
-	Test::WWW::Mechanize::PSGI
-	Time::HiRes
-	URL::Encode::XS
-	Web::Feed
-	WWW::Mailman
-	WWW::Shorten::Bitly
-	XML::Feed
-	YAML
-	JSON
-);
 
 foreach my $module (@modules) {
 	system "$path/bin/cpanm $module";
