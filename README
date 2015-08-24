@@ -6,13 +6,15 @@ An environment to develop Perl-based applications.
 
 ========
 
-to build a new release update
+to build a new release form scratch update
 
   bootstrap.sh
   modules.txt
 
 Destroy exisiting box  (vagrant destroy)
 and create a new one (vagrant up).
+
+(If we don't upgrade perl then I think we can start from the existing box)
 
 We might need to run (vagrant provision) several times
 if some of the modules don't get installed on the first run.
@@ -21,11 +23,35 @@ We might need to manually copy the  bash_profile file
 unless we can figure out why bootstrap.sh does not copy it.
 
 
+TODO: Add a script that will test some of the modules.
+
+
+
 ======
 
 To release a new box run
 
+
+    vagrant halt
+
     vagrant package --output pde.box
 
 Then upload to https://atlas.hashicorp.com/
+
+Select the 'Vagrant' menu item at the top: https://atlas.hashicorp.com/vagrant
+Select the box:  szabgab/pde
+New version
+
+
+========
+
+
+For new Vagrant series:
+
+- Create a Vagrant box with the Web UI
+  Name: szabgab/cm
+  Short Desription: Code Maven Environment
+  [Create Box]
+
+
 
