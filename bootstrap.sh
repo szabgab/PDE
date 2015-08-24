@@ -5,6 +5,7 @@ apt-get upgrade
 apt-get install -y htop
 apt-get install -y vim
 apt-get install -y curl
+apt-get install -y git
 apt-get install -y mongodb
 #apt-get install -y libxml2
 apt-get install -y libxml2-dev

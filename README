@@ -4,13 +4,28 @@ An environment to develop Perl-based applications.
 
 
 
+========
+
+to build a new release update
+
+  bootstrap.sh
+  modules.txt
+
+Destroy exisiting box  (vagrant destroy)
+and create a new one (vagrant up).
+
+We might need to run (vagrant provision) several times
+if some of the modules don't get installed on the first run.
+
+We might need to manually copy the  bash_profile file
+unless we can figure out why bootstrap.sh does not copy it.
+
+
 ======
 
 To release a new box run
 
-    vagrant package dev --output pmde.box
+    vagrant package --output pde.box
 
 Then upload to https://atlas.hashicorp.com/
-
-
 
