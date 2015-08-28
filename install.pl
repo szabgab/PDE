@@ -50,3 +50,12 @@ foreach my $module (@modules) {
 # rm -rf /root/.cpanm/work/
 
 system "chown -R vagrant.vagrant $path";
+
+my $node = 'v0.12.7';
+my $node_dir = "node-$node-linux-x86";
+if (not -e 'node') {
+	system "wget -q https://nodejs.org/dist/$node/$node_dir.tar.gz";
+	system "tar xzf "$node_dir.tar.gz"
+	rename $node_dir, 'node';
+}
+
