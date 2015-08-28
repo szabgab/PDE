@@ -3,6 +3,7 @@
 apt-get update
 apt-get upgrade
 apt-get install -y htop
+apt-get install -y tree
 apt-get install -y vim
 apt-get install -y curl
 apt-get install -y git
@@ -20,6 +21,7 @@ sudo apt-get -y install mysql-server-5.5
 
 echo "copying bash_profile"
 cp /vagrant/bash_profile ~/.bash_profile
+cp /vagrant/gitconfig ~/.gitconfig
 echo "Result: $?"
 echo 'perl-maven' > /etc/hostname
 

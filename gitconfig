@@ -1,0 +1,9 @@
+# [user]
+# 	name = Foo Bar 
+# 	email = foo@bar.com
+[alias]
+	st = status
+	co = checkout
+	ci = commit
+    try = merge --no-commit --no-ff
+    files = log --name-only
