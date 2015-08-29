@@ -2,7 +2,7 @@ if [ -f ~/.bashrc ]; then
     . ~/.bashrc
 fi
 
-export PATH=~/localperl/bin:~/node/bin:$PATH
+export PATH=~/localperl/bin:~/node/bin:~/rakudo/bin:$PATH
 
 alias cp='cp -i'
 alias mv='mv -i'
