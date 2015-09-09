@@ -77,7 +77,6 @@ Vagrant.configure(2) do |config|
   #SHELL
 
   #   /home/vagrant/localperl/bin/perl /vagrant/install.pl test
-  config.vm.box = "hashicorp/precise32"
   config.vm.provision "shell", inline: <<-SHELL
      /usr/bin/perl /vagrant/install.pl
      /home/vagrant/localperl/bin/perl -v
