@@ -2,6 +2,7 @@
 
 apt-get update
 apt-get upgrade
+apt-get autoremove
 apt-get install -y htop
 apt-get install -y tree
 apt-get install -y vim
