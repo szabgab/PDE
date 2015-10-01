@@ -2,7 +2,7 @@
 
 apt-get update
 apt-get upgrade
-apt-get autoremove
+apt-get autoremove -y
 apt-get install -y htop
 apt-get install -y tree
 apt-get install -y vim
@@ -17,10 +17,11 @@ apt-get install -y libdb-dev
 apt-get install -y redis-server
 apt-get install -y sqlite3
 apt-get install -y libsqlite3-dev
+apt-get install -y libssl-dev
 
-sudo debconf-set-selections <<< 'mysql-server-5.5 mysql-server/root_password password secret'
-sudo debconf-set-selections <<< 'mysql-server-5.5 mysql-server/root_password_again password secret'
-sudo apt-get -y install mysql-server-5.5 
+sudo debconf-set-selections <<< 'mysql-server mysql-server/root_password password secret'
+sudo debconf-set-selections <<< 'mysql-server mysql-server/root_password_again password secret'
+sudo apt-get -y install mysql-server
 
 echo "copying bash_profile"
 cp /vagrant/bash_profile ~/.bash_profile
