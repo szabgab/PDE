@@ -1,12 +1,6 @@
-Perl Maven Development Environment
-
-An environment to develop Perl-based applications.
-
-
-
 ========
 
-to build a new release form scratch update
+To build a new release form scratch update
 
   Vagrantfile   the OS in config.vm.box
                 https://atlas.hashicorp.com/boxes/search?utf8=%E2%9C%93&sort=&provider=&q=ubuntu+15.04
@@ -59,6 +53,7 @@ For new Vagrant series:
   Name: szabgab/cm
   Short Desription: Code Maven Environment
   [Create Box]
+
 
 
 
