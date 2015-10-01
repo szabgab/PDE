@@ -14,6 +14,8 @@ apt-get install -y libexpat1-dev
 apt-get install -y libpam-dev
 apt-get install -y libdb-dev
 apt-get install -y redis-server
+apt-get install -y sqlite3
+apt-get install -y libsqlite3-dev
 
 sudo debconf-set-selections <<< 'mysql-server-5.5 mysql-server/root_password password secret'
 sudo debconf-set-selections <<< 'mysql-server-5.5 mysql-server/root_password_again password secret'
