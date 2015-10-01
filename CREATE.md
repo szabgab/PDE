@@ -40,6 +40,12 @@ Then upload to https://atlas.hashicorp.com/
 Select the 'Vagrant' menu item at the top: https://atlas.hashicorp.com/vagrant
 Select the box:  szabgab/pde
 New version
+  1.1.0       (or whatever version number we would like to give)
+  perl 5.22.0 and a bunch of CPAN modules.
+Create new provider
+  virtualbox
+  Upload   (radio)
+
 
 
 For new Vagrant series
