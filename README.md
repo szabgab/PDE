@@ -1,11 +1,13 @@
 Perl Development Environment
+============
 
 A virual Linux environment to develop Perl-based applications.
 
 In order to start using it
 
-    * Install Vagrant
-    * Install VirtualBox
+    Install Vagrant
+    Install VirtualBox
+
 
     vagrant init szabgab/pde
     vagrant up

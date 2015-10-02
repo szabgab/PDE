@@ -57,7 +57,7 @@ foreach my $module (@modules) {
 	system "$perl5_path/bin/cpanm $module";
 }
 
-# rm -rf /root/.cpanm/work/
+# system "rm -rf /root/.cpanm/";
 
 system "chown -R vagrant.vagrant $perl5_path";
 

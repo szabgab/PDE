@@ -23,6 +23,11 @@ We might need to manually copy the  bash_profile file
 unless we can figure out why bootstrap.sh does not copy it.
 
 
+Special cases
+=============
+Vagrant: http://serverfault.com/questions/697055/ubuntu-15-04-elasticsearch-service-doesnt-start
+
+
 TODO: Add a script that will test some of the modules.
 
 
@@ -30,9 +35,10 @@ TODO: Add a script that will test some of the modules.
 Release a new box run
 ========
 
+	vagrant ssh
+	sudo rm -rf /root/.cpanm/
 
     vagrant halt
-
     vagrant package --output pde.box
 
 Then upload to https://atlas.hashicorp.com/

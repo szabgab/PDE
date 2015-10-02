@@ -18,6 +18,7 @@ apt-get install -y redis-server
 apt-get install -y sqlite3
 apt-get install -y libsqlite3-dev
 apt-get install -y libssl-dev
+apt-get install -y elasticsearch
 
 sudo debconf-set-selections <<< 'mysql-server mysql-server/root_password password secret'
 sudo debconf-set-selections <<< 'mysql-server mysql-server/root_password_again password secret'
