@@ -26,10 +26,16 @@ unless we can figure out why bootstrap.sh does not copy it.
 Special cases
 =============
 Vagrant: http://serverfault.com/questions/697055/ubuntu-15-04-elasticsearch-service-doesnt-start
+Net::OpenSSH - this will prompt for a password but will time out after 15 sec.
 
 
 TODO: Add a script that will test some of the modules.
-
+TODO fix copying
+     bash_profile
+     gitconfig
+     examples
+TODO: test modules, report versions
+ 
 
 
 Release a new box run
@@ -51,6 +57,13 @@ New version
 Create new provider
   virtualbox
   Upload   (radio)
+
+
+  click on 'Finish'
+  click on 'versions' link
+  click on 'unreleased' link
+  click on 'Release version' button
+
 
 
 
