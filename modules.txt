@@ -58,6 +58,7 @@ Plack
 Plack::Middleware::DirIndex
 PPI
 PPIx::LineToSub
+Rex
 Scope::Upper
 Sereal::Decoder
 Sereal::Encoder
