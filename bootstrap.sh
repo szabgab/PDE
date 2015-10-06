@@ -20,9 +20,23 @@ apt-get install -y libsqlite3-dev
 apt-get install -y libssl-dev
 apt-get install -y elasticsearch
 
+# needed for Alien::RRDtool in Task::Munin
+apt-get install -y pkg-config 
+apt-get install -y libglib2.0-dev
+apt-get install -y libcairo-dev
+apt-get install -y libpango1.0-dev
+
+
+# MySQL
 sudo debconf-set-selections <<< 'mysql-server mysql-server/root_password password secret'
 sudo debconf-set-selections <<< 'mysql-server mysql-server/root_password_again password secret'
 sudo apt-get -y install mysql-server
+sudo apt-get -y install libmysqld-dev
+
+# PostgreSQL
+sudo apt-get -y install postgresql
+sudo apt-get -y install postgresql-server-dev-9.4
+
 
 echo "copying bash_profile"
 cp /vagrant/bash_profile ~/.bash_profile

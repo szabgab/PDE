@@ -18,6 +18,8 @@ Data::Printer
 DateTime
 DateTime::Format::ICal
 DateTime::Functions
+DBD::mysql
+DBD::Pg
 DBD::SQLite
 DBI
 DBIx::RunSQL
@@ -46,6 +48,7 @@ Module::Version
 Mojolicious
 MongoDB
 Moo
+Moose
 MooX::Options
 MIME::Lite
 Net::Delicious
@@ -66,7 +69,9 @@ Starman
 Storable
 SVG
 Template
+Task::Munin
 Term::ReadPassword::Win32
+Test::CircularDependencies
 Test::Code::TidyAll
 Test::More
 Test::Perl::Critic
