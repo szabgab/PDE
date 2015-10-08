@@ -1,30 +1,30 @@
 #!/usr/bin/env bash
 
-apt-get update
-apt-get upgrade
-apt-get autoremove -y
-apt-get install -y htop
-apt-get install -y tree
-apt-get install -y vim
-apt-get install -y curl
-apt-get install -y git
-apt-get install -y mongodb
-#apt-get install -y libxml2
-apt-get install -y libxml2-dev
-apt-get install -y libexpat1-dev
-apt-get install -y libpam-dev
-apt-get install -y libdb-dev
-apt-get install -y redis-server
-apt-get install -y sqlite3
-apt-get install -y libsqlite3-dev
-apt-get install -y libssl-dev
-apt-get install -y elasticsearch
+sudo apt-get update
+sudo apt-get upgrade
+sudo apt-get autoremove -y
+sudo apt-get install -y htop
+sudo apt-get install -y tree
+sudo apt-get install -y vim
+sudo apt-get install -y curl
+sudo apt-get install -y git
+sudo apt-get install -y mongodb
+#sudo apt-get install -y libxml2
+sudo apt-get install -y libxml2-dev
+sudo apt-get install -y libexpat1-dev
+sudo apt-get install -y libpam-dev
+sudo apt-get install -y libdb-dev
+sudo apt-get install -y redis-server
+sudo apt-get install -y sqlite3
+sudo apt-get install -y libsqlite3-dev
+sudo apt-get install -y libssl-dev
+sudo apt-get install -y elasticsearch
 
 # needed for Alien::RRDtool in Task::Munin
-apt-get install -y pkg-config 
-apt-get install -y libglib2.0-dev
-apt-get install -y libcairo-dev
-apt-get install -y libpango1.0-dev
+sudo apt-get install -y pkg-config 
+sudo apt-get install -y libglib2.0-dev
+sudo apt-get install -y libcairo-dev
+sudo apt-get install -y libpango1.0-dev
 
 
 # MySQL
@@ -42,7 +42,7 @@ echo "copying bash_profile"
 cp /vagrant/bash_profile ~/.bash_profile
 cp /vagrant/gitconfig ~/.gitconfig
 echo "Result: $?"
-echo 'perl-maven' > /etc/hostname
+echo 'perl-maven' | sudo tee /etc/hostname
 
 # apt-get install -y apache2
 # if ! [ -L /var/www ]; then
@@ -50,5 +50,5 @@ echo 'perl-maven' > /etc/hostname
 #   ln -fs /vagrant /var/www
 # fi
 
-apt-get clean
+sudo apt-get clean
 
