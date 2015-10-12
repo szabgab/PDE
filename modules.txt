@@ -4,6 +4,7 @@ App::cpanoutdated
 Business::PayPal
 Cache::File
 Carp::Always
+CGI
 Code::Explain
 Config::Tiny
 Crypt::URandom
