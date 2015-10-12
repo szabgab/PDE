@@ -66,6 +66,8 @@ if (not -e 'node') {
 	system "wget -q https://nodejs.org/dist/$version{node}/$node_dir.tar.gz";
 	system "tar xzf $node_dir.tar.gz";
 	rename $node_dir, 'node';
+	system "chown -R vagrant.vagrant node";
+	unlink "$node_dir.tar.gz";
 }
 
 my $rakudo_path = "/home/vagrant/rakudo";
@@ -78,6 +80,8 @@ if ( not -e 'rakudo') {
 	system "make";
 	system "make install";
 	chdir '..';
+
+	system "chown -R vagrant.vagrant $rakudo_path";
 	system "rm -rf $rakudo";
 	unlink "$rakudo.tar.gz";
 }
