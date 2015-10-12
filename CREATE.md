@@ -30,12 +30,7 @@ Net::OpenSSH - this will prompt for a password but will time out after 15 sec.
 
 
 TODO: Add a script that will test some of the modules.
-TODO fix copying
-     bash_profile
-     gitconfig
-     examples
-TODO: test modules, report versions
- 
+TODO copy examples
 
 
 Release a new box run
