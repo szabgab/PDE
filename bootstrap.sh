@@ -39,9 +39,10 @@ sudo apt-get -y install postgresql-server-dev-9.4
 
 
 echo "copying bash_profile"
-cp /vagrant/bash_profile ~/.bash_profile
-cp /vagrant/gitconfig ~/.gitconfig
-echo "Result: $?"
+cp /vagrant/bash_profile /home/vagrant/.bash_profile
+chown vagrant.vagrant /home/vagrant/.bash_profile
+cp /vagrant/gitconfig /home/vagrant/.gitconfig
+chown vagrant.vagrant /home/vagrant/.gitconfig
 echo 'perl-maven' > /etc/hostname
 
 # apt-get install -y apache2
