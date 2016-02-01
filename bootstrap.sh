@@ -12,6 +12,7 @@ apt-get install -y mongodb
 #apt-get install -y libxml2
 apt-get install -y libxml2-dev
 apt-get install -y libexpat1-dev
+apt-get insatll -y libxslt1-dev
 apt-get install -y libpam-dev
 apt-get install -y libdb-dev
 apt-get install -y redis-server
@@ -32,6 +33,7 @@ sudo debconf-set-selections <<< 'mysql-server mysql-server/root_password passwor
 sudo debconf-set-selections <<< 'mysql-server mysql-server/root_password_again password secret'
 sudo apt-get -y install mysql-server
 sudo apt-get -y install libmysqld-dev
+sudo apt-get -y install libmysqlclient-dev
 
 # PostgreSQL
 sudo apt-get -y install postgresql
