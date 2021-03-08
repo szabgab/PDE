@@ -46,6 +46,7 @@ EPublisher::Target::Plugin::Mobi
 File::Find::Rule
 Gravatar::URL
 Hash::Merge::Simple
+HTML::Template
 Image::ExifTool
 JSON::Path
 JSON::XS
@@ -70,6 +71,8 @@ Path::Tiny
 Parallel::ForkManager
 PAR::Packer
 PDF::Create
+Perl::Critic
+Perl::Critic::StricterSubs
 Perl::Tidy
 PerlX::Maybe
 Plack
@@ -85,14 +88,18 @@ Starman
 Storable
 SVG
 Template
+Template::Plugin::Comma
 Task::Munin
 Term::ReadPassword::Win32
 Test::CircularDependencies
 Test::Code::TidyAll
+Test::Compile
+Test::NoWarnings
 Test::More
 Test::Most
 Test::Perl::Critic
 Test::Script
+Test::Strict
 Test::Version
 Test::WWW::Mechanize
 Test::WWW::Mechanize::PSGI
