@@ -61,14 +61,14 @@ foreach my $module (@modules) {
 
 system "chown -R vagrant.vagrant $perl5_path";
 
-my $node_dir = "node-$version{node}-linux-x86";
-if (not -e 'node') {
-	system "wget -q https://nodejs.org/dist/$version{node}/$node_dir.tar.gz";
-	system "tar xzf $node_dir.tar.gz";
-	rename $node_dir, 'node';
-	system "chown -R vagrant.vagrant node";
-	unlink "$node_dir.tar.gz";
-}
+#my $node_dir = "node-$version{node}-linux-x86";
+#if (not -e 'node') {
+#	system "wget -q https://nodejs.org/dist/$version{node}/$node_dir.tar.gz";
+#	system "tar xzf $node_dir.tar.gz";
+#	rename $node_dir, 'node';
+#	system "chown -R vagrant.vagrant node";
+#	unlink "$node_dir.tar.gz";
+#}
 
 my $rakudo_path = "/home/vagrant/rakudo";
 my $rakudo = "rakudo-star-$version{rakudo}";
